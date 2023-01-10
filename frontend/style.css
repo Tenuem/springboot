@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #470349;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    color:grey;
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse; 
+    padding: 10px;
+    margin-top: 40px
+
+}
+
+tr { border: none; }
+td, th {
+  border-right: solid 3px #ff6c00; 
+  border: solid 3px #000000;
+  text-align: center;
+  padding: 10px
+}
+
+
+h1 {
+    background-color:black;
+    width: 100vw;
+    padding-left: 5%;
+    margin-top: 0;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    font-size: 24px;
+}
+
+.menuHeader {
+    font-size: 24px;
+}
+
+.authorInformation {
+    padding: 10px
+}
+
+.songInformation {
+    padding: 10px
+}
+.authorTable {
+    width: 100%;
+    padding: 40px
+}
+
+.addForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.addForm > * {
+    padding: 2px;
+    margin: 2px
+}
