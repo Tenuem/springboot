@@ -1,6 +1,6 @@
-FROM  nginx:latest
+FROM  nginx
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 8080
-EXPOSE 9090
+EXPOSE 80

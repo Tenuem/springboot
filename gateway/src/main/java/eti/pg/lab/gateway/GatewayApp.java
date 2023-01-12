@@ -24,14 +24,12 @@ public class GatewayApp {
 
         return builder.routes()
                 .route("authors", r -> r
-                        .host("localhost:8080")
-                        .and()
+
                         .path("/api/authors", "/api/authors/{id}")
                         .uri("http://localhost:8081")
                 )
                 .route("songs", r->r
-                        .host("localhost:8080")
-                        .and()
+
                         .path("/api/songs", "/api/songs/{id}", "/api/authors/{id}/songs", "/api/authors/{id}/songs/{songId}")
                         .uri("http://localhost:8082")
                 )
