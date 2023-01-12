@@ -6,7 +6,6 @@ import eti.pg.lab.song.entity.Song;
 import eti.pg.lab.song.service.SongService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import lombok.SneakyThrows;
 
 import javax.annotation.PostConstruct;
 import java.time.LocalDate;

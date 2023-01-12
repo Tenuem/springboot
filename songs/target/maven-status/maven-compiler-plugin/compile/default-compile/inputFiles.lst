@@ -1,0 +1,17 @@
+D:\javalab\spring\songs\src\main\java\eti\pg\lab\song\dto\UpdateSongRequest.java
+D:\javalab\spring\songs\src\main\java\eti\pg\lab\configuration\InitializedData.java
+D:\javalab\spring\songs\src\main\java\eti\pg\lab\song\repository\SongRepository.java
+D:\javalab\spring\songs\src\main\java\eti\pg\lab\song\controller\AuthorSongsController.java
+D:\javalab\spring\songs\src\main\java\eti\pg\lab\song\dto\CreateSongRequest.java
+D:\javalab\spring\songs\src\main\java\eti\pg\lab\author\service\AuthorService.java
+D:\javalab\spring\songs\src\main\java\eti\pg\lab\SongApp.java
+D:\javalab\spring\songs\src\main\java\eti\pg\lab\author\controller\AuthorController.java
+D:\javalab\spring\songs\src\main\java\eti\pg\lab\author\dto\CreateAuthorRequest.java
+D:\javalab\spring\songs\src\main\java\eti\pg\lab\song\service\SongService.java
+D:\javalab\spring\songs\src\main\java\eti\pg\lab\song\dto\GetSongResponse.java
+D:\javalab\spring\songs\src\main\java\eti\pg\lab\song\entity\Song.java
+D:\javalab\spring\songs\src\main\java\eti\pg\lab\author\repository\AuthorRepository.java
+D:\javalab\spring\songs\src\main\java\eti\pg\lab\author\entity\Author.java
+D:\javalab\spring\songs\src\main\java\eti\pg\lab\configuration\package-info.java
+D:\javalab\spring\songs\src\main\java\eti\pg\lab\song\dto\GetSongsResponse.java
+D:\javalab\spring\songs\src\main\java\eti\pg\lab\song\controller\SongController.java

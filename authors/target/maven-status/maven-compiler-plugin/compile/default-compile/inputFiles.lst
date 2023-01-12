@@ -1,0 +1,12 @@
+D:\javalab\spring\authors\src\main\java\eti\pg\lab\author\dto\GetAuthorResponse.java
+D:\javalab\spring\authors\src\main\java\eti\pg\lab\author\service\AuthorService.java
+D:\javalab\spring\authors\src\main\java\eti\pg\lab\author\controller\AuthorController.java
+D:\javalab\spring\authors\src\main\java\eti\pg\lab\author\dto\PutAuthorRequest.java
+D:\javalab\spring\authors\src\main\java\eti\pg\lab\author\repository\AuthorRepository.java
+D:\javalab\spring\authors\src\main\java\eti\pg\lab\author\dto\GetAuthorsResponse.java
+D:\javalab\spring\authors\src\main\java\eti\pg\lab\author\event\dto\CreateAuthorRequest.java
+D:\javalab\spring\authors\src\main\java\eti\pg\lab\AuthorApp.java
+D:\javalab\spring\authors\src\main\java\eti\pg\lab\author\dto\CreateAuthorRequest.java
+D:\javalab\spring\authors\src\main\java\eti\pg\lab\author\event\repository\AuthorEventRepository.java
+D:\javalab\spring\authors\src\main\java\eti\pg\lab\initializer\Init.java
+D:\javalab\spring\authors\src\main\java\eti\pg\lab\author\entity\Author.java

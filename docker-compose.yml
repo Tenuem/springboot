@@ -1,0 +1,59 @@
+version: "3"
+services:
+
+  #reverse-proxy:
+  #  build: reverseproxy
+  #  container_name: reverseproxy
+  #  ports:
+  #  - "8080:4040"
+  #  - "9090:3030"
+  #  networks:
+  #    - prox
+
+  songs:
+    build: ./songs/
+    networks:
+      prox:
+        ipv4_address: 172.18.0.5
+
+  authors:
+    build: ./authors/
+    depends_on:
+      - songs
+    networks:
+          prox:
+            ipv4_address: 172.18.0.3
+
+  gateway:
+    build: ./gateway/
+    depends_on:
+      - songs
+    networks:
+      prox:
+        ipv4_address: 172.18.0.1
+
+  frontend: 
+    build: ./frontend/
+    depends_on:
+      - gateway
+    networks:
+      prox:
+        ipv4_address: 172.18.0.4
+
+  rp:
+    build: ./reverseproxy/
+    depends_on:
+      - gateway
+    networks:  
+      prox:
+        ipv4_address: 172.18.0.2
+    ports:
+      - 8080:8080
+      - 9090:9090
+
+networks:
+  prox:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.18.0.0/16
