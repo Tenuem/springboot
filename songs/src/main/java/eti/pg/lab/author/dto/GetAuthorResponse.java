@@ -19,10 +19,10 @@ public class GetAuthorResponse {
     private LocalDate dateOfBirth;
 
     public static Function<Author, GetAuthorResponse> entityToDtoMapper(){
-        return pilot -> GetAuthorResponse.builder()
-                .id(pilot.getId())
-                .name(pilot.getName())
-                .dateOfBirth(pilot.getDateOfBirth())
+        return author -> GetAuthorResponse.builder()
+                .id(author.getId())
+                .name(author.getName())
+                .dateOfBirth(author.getDateOfBirth())
                 .build();
     }
 }
