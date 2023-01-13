@@ -3,9 +3,11 @@ package eti.pg.lab.author.entity;
 import eti.pg.lab.song.entity.Song;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+import org.apache.tomcat.jni.Local;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -20,10 +22,22 @@ import java.util.List;
 @Table(name="authors")
 public class Author implements Serializable {
 
+    public Author(int id, String name, LocalDate date){
+        this.id = id;
+        this.name = name;
+        this.dateOfBirth = date;
+    }
+
+
     @Id
     @Column(unique = true)
     private int id;
 
+    @Column
+    private String name;
+
+    @Column
+    private LocalDate dateOfBirth;
     /**
      List of songs made by author
      */

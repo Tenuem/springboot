@@ -12,12 +12,20 @@ import java.time.LocalDate;
 @Setter
 @SuperBuilder
 @NoArgsConstructor
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
+//@AllArgsConstructor(access = AccessLevel.PRIVATE)
 @ToString
 @EqualsAndHashCode
 @Entity
 @Table(name="songs")
 public class Song implements Serializable {
+
+    public Song(int id, String title, int time, LocalDate date, Author author){
+        this.id = id;
+        this.title = title;
+        this.time = time;
+        this.dateOfRelease = date;
+        this.author = author;
+    }
 
     @Id
     @Column(unique = true, name="song_id")

@@ -29,15 +29,21 @@ public class InitializedData {
 
 
         Author p1 = Author.builder()
+                .name("Nirvana")
                 .id(1)
+                .dateOfBirth(LocalDate.of(1971,3,12))
                 .build();
 
         Author p2 = Author.builder()
+                .name("Wolfgang Amadeus Mozart")
                 .id(2)
+                .dateOfBirth(LocalDate.of(1801, 4, 23))
                 .build();
 
         Author p3 = Author.builder()
+                .name("Shakira")
                 .id(3)
+                .dateOfBirth(LocalDate.of(1981, 9, 3))
                 .build();
 
         authorService.create(p1);
