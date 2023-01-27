@@ -3,9 +3,7 @@ package eti.pg.lab.cover.entity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -17,8 +15,17 @@ import javax.persistence.Table;
 @Entity
 @Table(name="covers")
 public class Cover {
+    @Id
     @Column
     private int id;
     @Column
     private String description;
+    @Column
+    private String author;
+    @Column
+    private String filename;
+    @Column
+    private String filePath;
+    @Lob
+    private byte[] file;
 }

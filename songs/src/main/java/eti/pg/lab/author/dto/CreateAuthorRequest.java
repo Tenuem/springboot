@@ -26,6 +26,8 @@ public class CreateAuthorRequest {
     public static Function<CreateAuthorRequest, Author> dtoToEntityMapper(){
         return request -> Author.builder()
                 .id(request.getId())
+                .name(request.getName())
+                .dateOfBirth(request.getDateOfBirth())
                 .build();
     }
 }

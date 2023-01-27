@@ -13,13 +13,18 @@ import java.util.function.Function;
 @ToString
 @EqualsAndHashCode
 public class GetCoverResponse {
+
     private String desc;
     private int id;
+    private String author;
+    //private String filename;
 
     public static Function<Cover, GetCoverResponse> entityToDtoMapper(){
         return cover -> GetCoverResponse.builder()
                 .id(cover.getId())
                 .desc(cover.getDescription())
+                .author(cover.getAuthor())
+                //.filename(cover.getFilename())
                 .build();
     }
 }

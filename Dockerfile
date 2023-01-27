@@ -1,0 +1,7 @@
+FROM mariadb
+
+ENV MYSQL_ROOT_PASSWORD=adminadmin
+ENV MYSQL_PASSWORD=adminadmin
+ENV MYSQL_USER=admin
+ENV MYSQL_DATABASE=musiclibrary
+ENV MARIADB_DATABASE=musiclibrary

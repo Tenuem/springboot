@@ -2,6 +2,8 @@ package eti.pg.lab.configuration;
 
 import eti.pg.lab.author.entity.Author;
 import eti.pg.lab.author.service.AuthorService;
+import eti.pg.lab.cover.entity.Cover;
+import eti.pg.lab.cover.service.CoverService;
 import eti.pg.lab.song.entity.Song;
 import eti.pg.lab.song.service.SongService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +18,14 @@ public class InitializedData {
 
     private final AuthorService authorService;
     private final SongService songService;
+    private final CoverService coverService;
 
 
     @Autowired
-    public InitializedData(AuthorService authorService, SongService songService){
+    public InitializedData(AuthorService authorService, SongService songService, CoverService coverService){
         this.authorService = authorService;
         this.songService = songService;
+        this.coverService = coverService;
     }
 
     @PostConstruct
@@ -69,6 +73,16 @@ public class InitializedData {
 
         songService.create(s1);
         songService.create(s2);
+
+        Cover c1 = Cover.builder()
+                .id(1)
+                .description("funny")
+                //.filePath("C:\\Users\\Adammo\\Desktop\\files\\lubeman.png")
+                .author("ja")
+                .filename("lubeman.png")
+                //.file("D:\\javalab\\spring\\songs\\src\\main\\resources\\files\\text.txt")
+                .build();
+        coverService.create(c1);
 
     }
 

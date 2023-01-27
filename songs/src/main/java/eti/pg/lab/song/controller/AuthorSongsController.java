@@ -72,14 +72,12 @@ public class AuthorSongsController
 
 
     @PostMapping
-    public ResponseEntity<Void> createLicensePOST(@PathVariable("authorId") int authorId,
+    public ResponseEntity<Void> createSongPOST(@PathVariable("authorId") int authorId,
                                                   @RequestBody CreateSongRequest request,
                                                   UriComponentsBuilder builder){
-        //request.setPilotId(authorId);
         Optional<Author> pilot = authorService.find(authorId);
         if(pilot.isPresent()){
             Song songToAdd = CreateSongRequest
-                    // lambda always returns pilot with Id from @PathVariable
                     .dtoToEntityMapper(id -> authorService.find(authorId).orElseThrow())
                     .apply(request);
             songToAdd = songService.create(songToAdd);
@@ -123,7 +121,7 @@ public class AuthorSongsController
     }
 
     @DeleteMapping("{songId}")
-    public ResponseEntity<Void> deleteLicense(@PathVariable("authorId") int authorId, @PathVariable("songId") int songId){
+    public ResponseEntity<Void> deleteSong(@PathVariable("authorId") int authorId, @PathVariable("songId") int songId){
         Optional<Song> song = songService.find(authorId, songId);
         if(song.isPresent()){
             songService.delete(song.get().getId());

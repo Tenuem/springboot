@@ -1,0 +1,26 @@
+POST http://localhost:8080/api/covers
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="file3.jpeg"
+
+// The 'input.txt' file will be uploaded
+< ./files_request/file3.jpeg
+
+--boundary
+Content-Disposition: form-data; name="author";
+
+// A temporary 'input-second.txt' file with the 'Text' content will be created and uploaded
+Test author of jpg image 3
+--boundary
+Content-Disposition: form-data; name="description";
+
+// A temporary 'input-second.txt' file with the 'Text' content will be created and uploaded
+Test description of jpg 3
+
+--boundary
+Content-Disposition: form-data; name="type";
+
+// A temporary 'input-second.txt' file with the 'Text' content will be created and uploaded
+jpeg
+--boundary--

@@ -21,13 +21,15 @@ public class GetCoversResponse {
     @Getter
     @Setter
     @Builder
-    @NoArgsConstructor
+    //@NoArgsConstructor
     @AllArgsConstructor(access = AccessLevel.PRIVATE)
     @ToString
     @EqualsAndHashCode
     public static class Authority{
         private int id;
         private String desc;
+        private String author;
+        //private String filename;
     }
     @Singular
     private List<GetCoversResponse.Authority> covers;
@@ -37,9 +39,11 @@ public class GetCoversResponse {
             GetCoversResponse.GetCoversResponseBuilder response = GetCoversResponse.builder();
 
             covers.stream()
-                    .map(cover -> GetCoversResponse.Authority.builder()
+                    .map(cover -> Authority.builder()
                             .desc(cover.getDescription())
                             .id(cover.getId())
+                            .author(cover.getAuthor())
+                            //.filename(cover.getFilename())
                             .build())
                     .forEach(response::cover);
             return response.build();

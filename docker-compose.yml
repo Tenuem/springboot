@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+
+  songs: 
+    build: ./songs
+    ports:
+      - 9030:8080
+    volumes:
+      - C:\Users\Adammo\Desktop\files\:/files
+    networks:
+      prox:
+        ipv4_address: 172.18.0.4
+
+  db:
+    image: mariadb
+    environment:
+      - MYSQL_ROOT_PASSWORD=adminadmin
+      - MYSQL_PASSWORD=adminadmin
+      - MYSQL_USER=admin
+      - MYSQL_DATABASE=musiclibrary
+      - MARIADB_DATABASE=musiclibrary
+    networks:  
+      prox:
+        ipv4_address: 172.18.0.7
+
+
+networks:
+  prox:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.18.0.0/16
