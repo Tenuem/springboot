@@ -42,7 +42,7 @@ function editSong(event){
 
     event.preventDefault()
     let request_object = {
-        'title' : document.getElementById('plevel_form').value,
+        'title' : document.getElementById('title_form').value,
         'dateOfRelease' : document.getElementById('date_form').value,
         'time' : document.getElementById('dsc_form').value
     }

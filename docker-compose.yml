@@ -1,0 +1,55 @@
+version: "3"
+
+services:
+
+  backend:
+    build: .
+    networks:
+      prox:
+        ipv4_address: 172.18.0.3
+
+  frontend: 
+    build: ./frontend/
+    depends_on:
+      - backend
+    ports:
+      - 9090:9090
+    networks:
+      prox:
+        ipv4_address: 172.18.0.4
+
+  reveresefoxy:
+    build: ./reverseproxy/
+    networks:  
+      prox:
+        ipv4_address: 172.18.0.2
+    
+
+  covers_db:
+    image: mariadb
+    environment:
+      - MARIADB_ROOT_PASSWORD=adminadmin
+      - MARIADB_DATABASE=covers_db
+    networks:
+      prox:
+        ipv4_address: 172.18.0.7
+
+  covers:
+    build: ./covers/
+    environment:
+      - DB_HOST=172.28.0.7
+      - STORAGE_LOCATION=/files
+    volumes:
+      - D:\javalab\ratunku\covers:/files
+    networks:
+      prox:
+        ipv4_address: 172.18.0.8
+    depends_on:
+      - covers_db
+
+networks:
+  prox:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.18.0.0/16

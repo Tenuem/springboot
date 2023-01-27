@@ -35,6 +35,12 @@ public class GatewayApp {
                         .path("/api/songs", "/api/songs/{id}", "/api/authors/{id}/songs", "/api/authors/{id}/songs/{songId}")
                         .uri("http://localhost:8082")
                 )
+                .route("covers", r->r
+                        .host("localhost:8080")
+                        .and()
+                        .path("/api/covers", "/api/covers/{id}")
+                        .uri("http://localhost:8083")
+                )
                 .build();
 
     }
